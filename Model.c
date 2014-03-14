@@ -55,8 +55,8 @@ struct {
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
 void ModelBegin
-	(
-	)
+(
+)
 {
     ModelSetKeyFilename("");
     ModelSetMode(-1);
@@ -68,8 +68,8 @@ void ModelBegin
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
 void ModelEnd
-	(
-	)
+(
+)
 {
 }
 
@@ -79,8 +79,8 @@ void ModelEnd
  * RETURNS:  A C-string which is the key.
  *------------------------------------------------------------------------------------------------------------*/
 char *ModelGetKey
-    (
-    )
+(
+)
 {
     return gModelDbase.mKey;
 }
@@ -91,8 +91,8 @@ char *ModelGetKey
  * RETURNS:  A C-string which is the file name of the key file.
  *------------------------------------------------------------------------------------------------------------*/
 char *ModelGetKeyFilename
-    (
-    )
+(
+)
 {
     return gModelDbase.mKeyFilename;
 }
@@ -103,8 +103,8 @@ char *ModelGetKeyFilename
  * RETURNS:  A bool which is either VIGENERE_ENCRYPT or VIGENERE_DECRYPT.
  *------------------------------------------------------------------------------------------------------------*/
 bool ModelGetMode
-    (
-    )
+(
+)
 {
     return gModelDbase.mMode;
 }
@@ -115,11 +115,11 @@ bool ModelGetMode
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
 void ModelSetKey
-    (
-    char *pKey
-    )
+(
+ char *pKey
+ )
 {
-    pKey = gModelDbase.mKey;
+    ???
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -128,11 +128,11 @@ void ModelSetKey
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
 void ModelSetKeyFilename
-    (
-    char *pKeyFilename
-    )
+(
+ char *pKeyFilename
+ )
 {
-	pKeyFilename = gModelDbase.mKeyFilename;
+    gModelDbase.mKeyFilename = pKeyFilename;
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -141,9 +141,9 @@ void ModelSetKeyFilename
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
 void ModelSetMode
-    (
-    bool pMode
-    )
+(
+ bool pMode
+ )
 {
-    pMode = gModelDbase.mMode;
+    ???
 }
