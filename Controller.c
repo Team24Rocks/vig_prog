@@ -220,19 +220,19 @@ static void ControllerParseCmdLine
     for (i = 1; i < pArgc; i++) {
         if (streq(pArgv[i], "e")) {
             /* Call ModelSetMode() to set the mode to VIGENERE_ENCRYPT */
-            ???
+            ModelSetMode( ); //Not sure what boolean value to use here
             /* Set bMode to true to indicate that a mode argument was found on the command line. */
-            ???
+            bMode = true;
         } else if (streq(pArgv[i], "d")) {
             /* Call ModelSetMode() to set the mode to VIGENERE_DECRYPT */
-            ???
+            ModelSetMode(); //Same here
             /* Set bMode to true to indicate that a mode argument was found on the command line. */
-            ???
+            bMode = true;
         } else if (streq(pArgv[i], "-h")) {
             /* Call ViewHelp() to display the help information. */
-            ???
+            ViewHelp();
             /* Call MainTerminate() with an error code of 0 and "" as the format string. */
-            ???
+            MainTerminate( 0 , "/"/""); //Wat
         } else if (streq(pArgv[i], "-k")) {
             if (++i >= pArgc) MainTerminate(TERM_ERR_KEYFILE, "-k option, missing key file name.\n");
             ModelSetKeyFilename(pArgv[i]);
