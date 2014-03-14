@@ -74,7 +74,17 @@ char EncryptChar
  * int col <- pCiphertext[pIndex] - 'A'
  * return 'A' + (col - row +26) % 26
  *------------------------------------------------------------------------------------------------------------*/
-???
+char DecryptChar
+(
+ char *pCiphertext,
+ char  pKeyChar,
+ int   pIndex
+ )
+{
+	int row = pKeyChar - 'A';
+    	int col = pCiphertext[pIndex] - 'A';
+	return 'A' + (col - row + 26) % 26;
+}
 
 /*--------------------------------------------------------------------------------------------------------------
  * FUNCTION: EncryptChar
@@ -94,7 +104,17 @@ char EncryptChar
  * int col <- pPlaintext[pIndex] - 'A'
  * return 'A' + (row + col) % 26
  *------------------------------------------------------------------------------------------------------------*/
-???
+char EncryptChar
+(
+ char *pPlaintext,
+ char  pKeyChar,
+ int   pIndex
+ ) {
+    
+    int row = pKeyChar - 'A';
+    int col = pPlaintext[pIndex] - 'A';
+    return 'A' + (row + col) %26;
+}
 
 /*--------------------------------------------------------------------------------------------------------------
  * FUNCTION: Vigenere
@@ -128,5 +148,17 @@ void Vigenere
     char *pOut
     )
 {
-    ???
+    int k = 0;
+    int i;
+    pOut[0] = '\0';
+    for(i = 0; i < strlen(pIn) - 1; i++) {
+	if(pMode == VIGENERE_ENCRYPT) {
+	    pOut[i] = EncryptChar(pIn, pKey[k], i);
+	} else {
+	    pOut[i] = DecryptChar(pIn, pKey[k], i);
+	}
+	
+	k = (k + 1) % strlen(pKey);
+    }
+    pOut[i] = '\0'; 
 }
