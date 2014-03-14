@@ -239,9 +239,9 @@ static void ControllerParseCmdLine
             bKeyfile = true;
         } else if (streq(pArgv[i], "-v")) {
             /* Call a certain View module function to display the version information. */
-            ???
+            ViewVersion();
             /* Call MainTerminate() like you did for the -h option to terminate the program. */
-            ???
+            MainTerminate( pArgc, pArgv[] );
         } else {
             MainTerminate(TERM_ERR_CMDLINE, "invalid command line option: %s\n", pArgv[i]);
         }
