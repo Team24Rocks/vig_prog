@@ -119,7 +119,7 @@ void ModelSetKey
  char *pKey
  )
 {
-    ???
+    gModelDbase.mKey = pKey;
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -145,5 +145,5 @@ void ModelSetMode
  bool pMode
  )
 {
-    ???
+    gModelDbase.mMode = pMode;
 }
