@@ -86,7 +86,7 @@ void ViewGetStr
  * DESCR:    Displays the help message.
  * RETURNS:  Nothing
  *------------------------------------------------------------------------------------------------------------*/
-void ViewcHelp() {
+void ViewHelp() {
     /* Call ViewVersion() to display the version information. */
     ViewVersion();
 
