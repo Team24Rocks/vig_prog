@@ -174,7 +174,7 @@ static void ControllerEncryptDecrypt
     ViewGetStr(msgin);
 
     /* Call Vigenere() to encrypt or decrypt the message. */
-    Vigenere();
+    Vigenere(pMode, ModelGetKey(), msgin, pMsgOut);
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -220,19 +220,19 @@ static void ControllerParseCmdLine
     for (i = 1; i < pArgc; i++) {
         if (streq(pArgv[i], "e")) {
             /* Call ModelSetMode() to set the mode to VIGENERE_ENCRYPT */
-            ModelSetMode(VIGENERE_ENCRYPT); //Not sure what boolean value to use here
+            ModelSetMode(VIGENERE_ENCRYPT);
             /* Set bMode to true to indicate that a mode argument was found on the command line. */
             bMode = true;
         } else if (streq(pArgv[i], "d")) {
             /* Call ModelSetMode() to set the mode to VIGENERE_DECRYPT */
-            ModelSetMode(VIGENERE_DECRYPT); //Same here
+            ModelSetMode(VIGENERE_DECRYPT);
             /* Set bMode to true to indicate that a mode argument was found on the command line. */
             bMode = true;
         } else if (streq(pArgv[i], "-h")) {
             /* Call ViewHelp() to display the help information. */
             ViewHelp();
             /* Call MainTerminate() with an error code of 0 and "" as the format string. */
-            MainTerminate( 0 , ""); //Wat
+            MainTerminate( 0 , ""); 
         } else if (streq(pArgv[i], "-k")) {
             if (++i >= pArgc) MainTerminate(TERM_ERR_KEYFILE, "-k option, missing key file name.\n");
             ModelSetKeyFilename(pArgv[i]);
@@ -241,7 +241,7 @@ static void ControllerParseCmdLine
             /* Call a certain View module function to display the version information. */
             ViewVersion();
             /* Call MainTerminate() like you did for the -h option to terminate the program. */
-            MainTerminate( pArgc, pArgv[] );
+            MainTerminate( pArgc, *pArgv );
         } else {
             MainTerminate(TERM_ERR_CMDLINE, "invalid command line option: %s\n", pArgv[i]);
         }
@@ -275,5 +275,12 @@ void ControllerRun
     (
     )
 {
-    ???
+    char *key[MAX_MSG_LEN + 1];
+    char *msgOut[MAX_MSG_LEN + 1];
+    *key = ModelGetKeyFilename();
+    FileReadStr(*key, *msgOut);
+    ModelSetKey(*msgOut);
+    bool pMode = ModelGetMode();
+    ControllerEncryptDecrypt(pMode, *msgOut);
+    ViewPrintStr(*msgOut);
 }

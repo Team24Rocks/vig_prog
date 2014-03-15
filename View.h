@@ -20,7 +20,7 @@
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
  **************************************************************************************************************/
-#ifdef VIEW_H_  /* Preprocessor guard to prevent View.h from being included more than once */
+#ifndef VIEW_H_  /* Preprocessor guard to prevent View.h from being included more than once */
 #define VIEW_H_ /* See comments in Main.h. */
 
 /*==============================================================================================================
