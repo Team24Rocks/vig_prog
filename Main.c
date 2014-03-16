@@ -81,6 +81,10 @@ int main(int   pArgc, char *pArgv[]) {
     ControllerRun();
 
     /* What should main return? */
+    
+    //if(???)
+    //mainterminate(???,???)
+    //else
     return 0;
 }
 
