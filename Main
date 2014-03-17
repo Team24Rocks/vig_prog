@@ -43,8 +43,6 @@
  * MODIFICATION HISTORY
  *     24 Jan 2012 [KRB] Version 1.0.
  *
- * March 16, 2014- Ashley Krueger, alkruege@asu.edu
- *
  * VIGENERE                                        24 Jan 2012                                         VIGENERE
 ***************************************************************************************************************/
 #include <stdarg.h>      /* For va_list, va_start, va_arg, and va_end */

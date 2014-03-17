@@ -19,6 +19,8 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
+ *
+ * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
 #include <stdio.h>   /* For sprintf() */
 #include "String.h"  /* Good to always include the module header file. See comments in Globals.c. */
@@ -33,11 +35,7 @@
  * RETURNS:  A pointer to the string with the new character concatenated onto the end.
  * NOTE:     pString had better be large enough to store the concatenated char.
  *------------------------------------------------------------------------------------------------------------*/
-char *StrCatChar
-    (
-    char *pString,
-    char  pChar
-    )
+char *StrCatChar(char *pString,char  pChar)
 {
     char charBuf[2] = { pChar, '\0' };
 
@@ -51,11 +49,7 @@ char *StrCatChar
  * RETURNS:  A pointer to the string with the integer concatenated onto the end.
  * NOTE:     pString had better be large enough to store the concatenated integer.
  *------------------------------------------------------------------------------------------------------------*/
-char *StrCatInt
-    (
-    char *pString,
-    int   pInt
-    )
+char *StrCatInt(char *pString,int   pInt)
 {
     char intBuf[32];
 

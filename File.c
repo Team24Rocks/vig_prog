@@ -19,6 +19,8 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
+ *
+ * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
 #include <stdio.h>    /* For FILE, fopen(), fscanf(), fclose(), fprintf() */
 #include <string.h>   /* For strlen() */
@@ -37,11 +39,7 @@
  * RETURNS:  Nothing directly. pString is an array of chars where the string that is read will be stored. It
  *           had better be defined to be large enough to store the string that is read. It is an output param.
  *------------------------------------------------------------------------------------------------------------*/
-void FileReadStr
-    (
-    char *pFilename,
-    char *pString
-    )
+void FileReadStr(char *pFilename,char *pString)
 {
     FILE *in;
 
@@ -78,11 +76,7 @@ void FileReadStr
  * RETURNS:  Nothing.
  * NOTE:     This function is currently unused but is placed here for future use.
  *------------------------------------------------------------------------------------------------------------*/
-void FileWriteStr
-    (
-    char *pFilename,
-    char *pString
-    )
+void FileWriteStr(char *pFilename,char *pString)
 {
     FILE *out;
 

@@ -19,6 +19,8 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
+ *
+ * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
 #include <string.h>    /* For strlen() */
 #include "Vigenere.h"  /* Good to always include the module header file. See comments in Globals.c. */
@@ -28,29 +30,17 @@
  * constants are declared in Vigenere.h.
  *============================================================================================================*/
 
-/* Define a bool constant named VIGENERE_ENCRYPT and initialize it to false. 
-	taken from Vignere.h file		not sure if quite correct*/ 
-#define VIGENERE_ENCRYPT false
-
-/* Declare a bool constant named VIGENERE_DECRYPT and initialize it to true. */
-#define VIGENERE_DECRYPT true
+/* Define a bool constant named VIGENERE_ENCRYPT and initialize it to false. */
+bool VIGENERE_ENCRYPT=false;
+/* Define a bool constant named VIGENERE_DECRYPT and initialize it to true. */
+bool VIGENERE_DECRYPT=true;
 
 /*==============================================================================================================
  * Static function declarations.
  *============================================================================================================*/
-char DecryptChar
-    (
-    char *pCiphertext,
-    char  pKeyChar,
-    int   pIndex
-    );
+char DecryptChar(char *pCiphertext,char  pKeyChar,int   pIndex);
 
-char EncryptChar
-    (
-    char *pPlaintext,
-    char  pKeyChar,
-    int   pIndex
-    );
+char EncryptChar(char *pPlaintext,char  pKeyChar,int   pIndex);
 
 /*==============================================================================================================
  * Function definitions.
@@ -74,16 +64,11 @@ char EncryptChar
  * int col <- pCiphertext[pIndex] - 'A'
  * return 'A' + (col - row +26) % 26
  *------------------------------------------------------------------------------------------------------------*/
-char DecryptChar
-(
- char *pCiphertext,
- char  pKeyChar,
- int   pIndex
- )
+char DecryptChar(char *pCiphertext,char  pKeyChar,int   pIndex)
 {
-	int row = pKeyChar - 'A';
-    	int col = pCiphertext[pIndex] - 'A';
-	return 'A' + (col - row + 26) % 26;
+	int row=pKeyChar-'A';
+	int col=pCiphertext[pIndex]-'A';
+	return ('A'+(col-row+26)%26);
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -104,16 +89,11 @@ char DecryptChar
  * int col <- pPlaintext[pIndex] - 'A'
  * return 'A' + (row + col) % 26
  *------------------------------------------------------------------------------------------------------------*/
-char EncryptChar
-(
- char *pPlaintext,
- char  pKeyChar,
- int   pIndex
- ) {
-    
-    int row = pKeyChar - 'A';
-    int col = pPlaintext[pIndex] - 'A';
-    return 'A' + (row + col) %26;
+char EncryptChar(char *pPlaintext,char  pKeyChar,int   pIndex)
+{
+	int row=pKeyChar-'A';
+	int col=pPlaintext[pIndex]-'A';
+	return ('A'+(row+col)%26);
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -140,25 +120,23 @@ char EncryptChar
  * End For
  * Set pOut[i] to the null character '\0'
  *------------------------------------------------------------------------------------------------------------*/
-void Vigenere
-    (
-    bool  pMode,
-    char *pKey,
-    char *pIn,
-    char *pOut
-    )
+void Vigenere(bool  pMode,char *pKey,char *pIn,char *pOut)
 {
-    int k = 0;
+    int k=0;
     int i;
-    pOut[0] = '\0';
-    for(i = 0; i < strlen(pIn) - 1; i++) {
-	if(pMode == VIGENERE_ENCRYPT) {
-	    pOut[i] = EncryptChar(pIn, pKey[k], i);
-	} else {
-	    pOut[i] = DecryptChar(pIn, pKey[k], i);
+    *pOut='\0';
+    for(i=0;i<=strlen(pIn)-1;i++)
+    {
+    	if(pMode==VIGENERE_ENCRYPT)
+		{
+			pOut[i]=EncryptChar(pIn, pKey[k], i);
+		}
+		else
+		{
+			pOut[i]=DecryptChar(pIn, pKey[k], i);
+		}
+		k=(k+1)%strlen(pKey);
 	}
-	
-	k = (k + 1) % strlen(pKey);
-    }
-    pOut[i] = '\0'; 
+	pOut[i]='\0';
 }
+

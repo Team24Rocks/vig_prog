@@ -18,44 +18,29 @@
  *
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
- * 24 Jan 2012 [KRB] Initial revision.
+ * 24 Jan 2012 [KRB] Initial revision *
+ * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
-#ifndef VIEW_H_  /* Preprocessor guard to prevent View.h from being included more than once */
-#define VIEW_H_ /* See comments in Main.h. */
+#ifndef VIEW_H  /* Preprocessor guard to prevent View.h from being included more than once */
+#define VIEW_H  /* See comments in Main.h. */
 
 /*==============================================================================================================
  * Global function declarations.
  *
  * See comments in Main.h concerning what global function declarations are for.
  *============================================================================================================*/
-extern void ViewBegin
-    (
-    );
+extern void ViewBegin();
 
-extern void ViewEnd
-    (
-    );
+extern void ViewEnd();
 
-extern char ViewGetChar
-	(
-	);
+extern char ViewGetChar();
 
-extern void ViewGetStr
-	(
-	char *pStr
-	);
+extern void ViewGetStr(char *pStr);
 
-extern void ViewHelp
-    (
-    );
+extern void ViewHelp();
 
-extern void ViewPrintStr
-    (
-    char *pString
-    );
+extern void ViewPrintStr(char *pString);
 
-extern void ViewVersion
-    (
-    );
+extern void ViewVersion();
 
 #endif /* __VIEW_H__ */

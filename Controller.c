@@ -19,16 +19,18 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
+ *
+ * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
 #include "Controller.h"  /* Good to always include the module header file. See comments in Globals.c. */
-#include "File.h"            /* For FileReadStr() */
-#include "Globals.h"            /* For MAX_MSG_LEN, TERM_ERR_CMD_LINE */
-#include "Main.h"             /* For MainTerminate() */
-#include "Model.h"            /* For ModelBegin(), ModelEnd(), ModelSetMode(), ModelSetKeyFilename(), ModelSetKey() */
-#include "String.h"            /* For streq */
-#include "Types.h"             /* For bool */
-#include "View.h"            /* For ViewBegin(), ViewEnd(), ViewGetChar(), ViewHelp(), ViewVersion(), ViewPrintStr() */
-#include "Vigenere.h"             /* For Vigenere() */
+#include "File.h"		 /* For FileReadStr() */
+#include "Globals.c"	 /* For MAX_MSG_LEN, TERM_ERR_CMD_LINE */
+#include "Main.h"		 /* For MainTerminate() */
+#include "Model.h"		 /* For ModelBegin(), ModelEnd(), ModelSetMode(), ModelSetKeyFilename(), ModelSetKey() */
+#include "String.h"		 /* For streq */
+#include "Types.h"       /* For bool */
+#include "View.h"		 /* For ViewBegin(), ViewEnd(), ViewGetChar(), ViewHelp(), ViewVersion(), ViewPrintStr() */
+#include "Vigenere.h"	 /* For Vigenere() */
 
 /*==============================================================================================================
  * Static function declarations.
@@ -116,17 +118,9 @@
  * any static function from any static/nonstatic function without the compiler bitching at me about the
  * function being undefined.
  *============================================================================================================*/
-static void ControllerEncryptDecrypt
-    (
-    bool  pMode,
-    char *pMsgOut
-    );
+static void ControllerEncryptDecrypt(bool  pMode,char *pMsgOut);
 
-static void ControllerParseCmdLine
-    (
-    int   pArgc,
-    char *pArgv[]
-    );
+static void ControllerParseCmdLine(int   pArgc,char *pArgv[]);
 
 /*==============================================================================================================
  * Function definitions. These are in alphabetical order.
@@ -138,11 +132,7 @@ static void ControllerParseCmdLine
  *           line.
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
-void ControllerBegin
-	(
-	int   pArgc,
-	char *pArgv[]
-	)
+void ControllerBegin(int   pArgc,char *pArgv[])
 {
     /* Initialize the Model. */
     ModelBegin();
@@ -161,20 +151,16 @@ void ControllerBegin
  * RETURNS:  If pMode is VIGENERE_ENCRYPT, pMsgOut is the ciphertext. If pMode is VIGENERE_DECRYPT, pMstOut is
  *           the plaintext.
  *------------------------------------------------------------------------------------------------------------*/
-static void ControllerEncryptDecrypt
-    (
-    bool  pMode,
-    char *pMsgOut
-    )
+static void ControllerEncryptDecrypt(bool  pMode,char *pMsgOut)
 {
     /* Define a character array named msgIn which has room for MAX_MSG_LEN+1 characters. */
-    char msgin[MAX_MSG_LEN + 1];
+    char *msgIn[MAX_MSG_LEN+1];
 
     /* Call ViewGetStr() to get the message string to be encrypted or decrypted. */
-    ViewGetStr(msgin);
+	ViewGetStr(*msgIn);
 
     /* Call Vigenere() to encrypt or decrypt the message. */
-    Vigenere(pMode, ModelGetKey(), msgin, pMsgOut);
+    Vigenere(pMode,ModelGetKey(),*msgIn,pMsgOut);
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -182,9 +168,7 @@ static void ControllerEncryptDecrypt
  * DESCR:    Called when the Controller module is about to die. Ends the View and Model modules.
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
-void ControllerEnd
-	(
-	)
+void ControllerEnd()
 {
     ViewEnd();
 	ModelEnd();
@@ -208,11 +192,7 @@ void ControllerEnd
  *
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
-static void ControllerParseCmdLine
-    (
-    int   pArgc,
-    char *pArgv[]
-    )
+static void ControllerParseCmdLine(int   pArgc,char *pArgv[])
 {
     bool bKeyfile = false, bMode = false;
     int i;
@@ -222,17 +202,17 @@ static void ControllerParseCmdLine
             /* Call ModelSetMode() to set the mode to VIGENERE_ENCRYPT */
             ModelSetMode(VIGENERE_ENCRYPT);
             /* Set bMode to true to indicate that a mode argument was found on the command line. */
-            bMode = true;
+            bMode=true;
         } else if (streq(pArgv[i], "d")) {
             /* Call ModelSetMode() to set the mode to VIGENERE_DECRYPT */
             ModelSetMode(VIGENERE_DECRYPT);
             /* Set bMode to true to indicate that a mode argument was found on the command line. */
-            bMode = true;
+            bMode=true;
         } else if (streq(pArgv[i], "-h")) {
             /* Call ViewHelp() to display the help information. */
             ViewHelp();
             /* Call MainTerminate() with an error code of 0 and "" as the format string. */
-            MainTerminate( 0 , ""); 
+            MainTerminate(0,"");
         } else if (streq(pArgv[i], "-k")) {
             if (++i >= pArgc) MainTerminate(TERM_ERR_KEYFILE, "-k option, missing key file name.\n");
             ModelSetKeyFilename(pArgv[i]);
@@ -241,7 +221,7 @@ static void ControllerParseCmdLine
             /* Call a certain View module function to display the version information. */
             ViewVersion();
             /* Call MainTerminate() like you did for the -h option to terminate the program. */
-            MainTerminate( pArgc, *pArgv );
+            MainTerminate(0,"");
         } else {
             MainTerminate(TERM_ERR_CMDLINE, "invalid command line option: %s\n", pArgv[i]);
         }
@@ -271,16 +251,13 @@ static void ControllerParseCmdLine
  * Call ControllerEncryptDecrypt() and pass the mode and msgOut as parameters.
  * Call ViewPrintStr() and pass msgOut as the parameter.
  *------------------------------------------------------------------------------------------------------------*/
-void ControllerRun
-    (
-    )
+void ControllerRun()
 {
-    char *key[MAX_MSG_LEN + 1];
-    char *msgOut[MAX_MSG_LEN + 1];
-    *key = ModelGetKeyFilename();
-    FileReadStr(*key, *msgOut);
+    char *key[MAX_MSG_LEN+1];
+    char *msgOut[MAX_MSG_LEN+1];
+    *key=ModelGetKeyFilename();
+    FileReadStr(*key,*msgOut);
     ModelSetKey(*msgOut);
-    bool pMode = ModelGetMode();
-    ControllerEncryptDecrypt(pMode, *msgOut);
+    ControllerEncryptDecrypt(ModelGetMode(),*msgOut);
     ViewPrintStr(*msgOut);
 }
