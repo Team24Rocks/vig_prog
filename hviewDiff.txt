@@ -1,0 +1,55 @@
+21c21,22
+<  * 24 Jan 2012 [KRB] Initial revision.
+---
+>  * 24 Jan 2012 [KRB] Initial revision *
+>  * March 16, 2014- Ashley Krueger, alkruege@asu.edu
+23,24c24,25
+< #ifndef VIEW_H_  /* Preprocessor guard to prevent View.h from being included more than once */
+< #define VIEW_H_ /* See comments in Main.h. */
+---
+> #ifndef VIEW_H  /* Preprocessor guard to prevent View.h from being included more than once */
+> #define VIEW_H  /* See comments in Main.h. */
+31,59c32,44
+< extern void ViewBegin
+<     (
+<     );
+< 
+< extern void ViewEnd
+<     (
+<     );
+< 
+< extern char ViewGetChar
+< 	(
+< 	);
+< 
+< extern void ViewGetStr
+< 	(
+< 	char *pStr
+< 	);
+< 
+< extern void ViewHelp
+<     (
+<     );
+< 
+< extern void ViewPrintStr
+<     (
+<     char *pString
+<     );
+< 
+< extern void ViewVersion
+<     (
+<     );
+---
+> extern void ViewBegin();
+> 
+> extern void ViewEnd();
+> 
+> extern char ViewGetChar();
+> 
+> extern void ViewGetStr(char *pStr);
+> 
+> extern void ViewHelp();
+> 
+> extern void ViewPrintStr(char *pString);
+> 
+> extern void ViewVersion();

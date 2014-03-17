@@ -1,0 +1,12 @@
+21a22,23
+>  *
+>  * March 16, 2014- Ashley Krueger, alkruege@asu.edu
+258,263c260
+< extern void MainTerminate
+< 	(
+< 	int   pTermCode,
+< 	char *pFmt,
+< 	...
+< 	);
+---
+> extern void MainTerminate(int   pTermCode,char *pFmt,...);

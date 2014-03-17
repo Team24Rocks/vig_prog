@@ -1,0 +1,70 @@
+21a22,23
+>  *
+>  * March 16, 2014- Ashley Krueger, alkruege@asu.edu
+57,59c59
+< void ModelBegin
+< (
+< )
+---
+> void ModelBegin()
+70,72c70
+< void ModelEnd
+< (
+< )
+---
+> void ModelEnd()
+81,83c79
+< char *ModelGetKey
+< (
+< )
+---
+> char *ModelGetKey()
+85c81
+<     return gModelDbase.mKey;
+---
+>    return gModelDbase.mKey; 
+93,95c89
+< char *ModelGetKeyFilename
+< (
+< )
+---
+> char *ModelGetKeyFilename()
+105,107c99
+< bool ModelGetMode
+< (
+< )
+---
+> bool ModelGetMode()
+117,120c109
+< void ModelSetKey
+< (
+<  char *pKey
+<  )
+---
+> void ModelSetKey(char *pKey)
+122c111
+<     gModelDbase.mKey = pKey;
+---
+>     gModelDbase.mKey=pKey;
+130,133c119
+< void ModelSetKeyFilename
+< (
+<  char *pKeyFilename
+<  )
+---
+> void ModelSetKeyFilename(char *pKeyFilename)
+135c121
+<     gModelDbase.mKeyFilename = pKeyFilename;
+---
+>     gModelDbase.mKeyFilename=pKeyFilename;
+143,146c129
+< void ModelSetMode
+< (
+<  bool pMode
+<  )
+---
+> void ModelSetMode(bool pMode)
+148c131
+<     gModelDbase.mMode = pMode;
+---
+>     gModelDbase.mMode=pMode;

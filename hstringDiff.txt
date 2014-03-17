@@ -1,0 +1,25 @@
+21a22,23
+>  *
+>  * March 16, 2014- Ashley Krueger, alkruege@asu.edu
+23,24c25,26
+< #ifndef STRING_H_  /* Preprocessor guard to prevent String.h from being included more than once */
+< #define STRING_H_  /* See comments in Main.h. */
+---
+> #ifndef STRING_H  /* Preprocessor guard to prevent String.h from being included more than once */
+> #define STRING_H  /* See comments in Main.h. */
+98,108c100,102
+< char *StrCatChar
+<     (
+<     char *pString,
+<     char  pChar
+<     );
+< 
+< char *StrCatInt
+<     (
+<     char *pString,
+<     int   pInt
+<     );
+---
+> char *StrCatChar(char *pString,char  pChar);
+> 
+> char *StrCatInt(char *pString,int   pInt);

@@ -1,0 +1,19 @@
+21a22,23
+>  *
+>  * March 16, 2014- Ashley Krueger, alkruege@asu.edu
+36,40c38
+< char *StrCatChar
+<     (
+<     char *pString,
+<     char  pChar
+<     )
+---
+> char *StrCatChar(char *pString,char  pChar)
+54,58c52
+< char *StrCatInt
+<     (
+<     char *pString,
+<     int   pInt
+<     )
+---
+> char *StrCatInt(char *pString,int   pInt)

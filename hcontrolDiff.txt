@@ -1,0 +1,21 @@
+23a24,25
+>  *
+>  * March 16, 2014- Ashley Krueger, alkruege@asu.edu
+25,26c27,28
+< #ifndef CONTROLLER_H_  /* Preprocessor guard to prevent Controller.h from being included more than once */
+< #define CONTROLLER_H_    /* See comments in Main.h. */
+---
+> #ifndef CONTROLLER_H  /* Preprocessor guard to prevent Controller.h from being included more than once */
+> #define CONTROLLER_H  /* See comments in Main.h. */
+39,45c41
+< extern void ControllerEnd
+<     (
+<     );
+< 
+< extern void ControllerRun
+<     (
+<     );
+---
+> extern void ControllerEnd();
+46a43
+> extern void ControllerRun();

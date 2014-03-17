@@ -1,0 +1,15 @@
+21a22,23
+>  *
+>  * March 16, 2014- Ashley Krueger, alkruege@asu.edu
+23,24c25,26
+< #ifndef FILE_H_  /* Preprocessor guard to File.h from being included more than once */
+< #define FILE_H_  /* See comments in Main.h. */
+---
+> #ifndef FILE_H  /* Preprocessor guard to File.h from being included more than once */
+> #define FILE_H  /* See comments in Main.h. */
+33,34c35,36
+< extern void FileReadStr(char *pFilename, char *pString);
+< extern void FileWriteStr(char *pFilename, char *pString);
+---
+> void FileReadStr(char *pFilename,char *pString);
+> void FileWriteStr(char *pFilename,char *pString);

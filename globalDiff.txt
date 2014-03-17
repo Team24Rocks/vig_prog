@@ -1,0 +1,7 @@
+21a22,23
+>  *
+>  * March 16, 2014- Ashley Krueger, alkruege@asu.edu
+228c230
+< const char *VERSION         = "1.0";
+---
+> const char *VERSION         = "1.1";

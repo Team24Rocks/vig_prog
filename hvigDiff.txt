@@ -1,0 +1,27 @@
+21a22,23
+>  *
+>  * March 16, 2014- Ashley Krueger, alkruege@asu.edu
+23,24c25,26
+< #ifndef VIGENERE_H_  /* Preprocessor guard to prevent Vigenere.h from being included more than once */
+< #define VIGENERE_H_  /* See comments in Main.h. */
+---
+> #ifndef VIGENERE_H  /* Preprocessor guard to prevent Vigenere.h from being included more than once */
+> #define VIGENERE_H  /* See comments in Main.h. */
+38c40
+< #define VIGENERE_ENCRYPT false
+---
+> bool VIGENERE_ENCRYPT;
+41c43
+< #define VIGENERE_DECRYPT true
+---
+> bool VIGENERE_DECRYPT;
+48,54c50
+< extern void Vigenere
+<     (
+<     bool  pMode,
+<     char *pKey,
+<     char *pIn,
+<     char *pOut
+<     );
+---
+> extern void Vigenere(bool  pMode,char *pKey,char *pIn,char *pOut);

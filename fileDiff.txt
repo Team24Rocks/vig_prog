@@ -1,0 +1,19 @@
+21a22,23
+>  *
+>  * March 16, 2014- Ashley Krueger, alkruege@asu.edu
+40,44c42
+< void FileReadStr
+<     (
+<     char *pFilename,
+<     char *pString
+<     )
+---
+> void FileReadStr(char *pFilename,char *pString)
+81,85c79
+< void FileWriteStr
+<     (
+<     char *pFilename,
+<     char *pString
+<     )
+---
+> void FileWriteStr(char *pFilename,char *pString)

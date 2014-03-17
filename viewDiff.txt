@@ -1,0 +1,59 @@
+21a22,23
+>  *
+>  * March 16, 2014- Ashley Krueger, alkruege@asu.edu
+27,28d28
+< void ViewVersion();
+< 
+39,41c39
+< void ViewBegin
+< 	(
+< 	)
+---
+> void ViewBegin()
+51,53c49
+< void ViewEnd
+< 	(
+< 	)
+---
+> void ViewEnd()
+63,65c59
+< char ViewGetChar
+< 	(
+< 	)
+---
+> char ViewGetChar()
+76,79c70
+< void ViewGetStr
+< 	(
+< 	char *pStr
+< 	)
+---
+> void ViewGetStr(char *pStr)
+97c88,99
+<     printf("/nEncrypts or decrypts a message using the Vigenere cipher./nUsage: vigenere mode [-h]-k keyfile [-v]");
+---
+>     printf("Vigenere Cipher Version 1.0"); 
+>     printf("\n\nEncrypts or decrypts a message using the Vigenere cipher. ");
+>     printf("\n\nUsage: vigenere mode [-h] -k keyfile [-v] ");
+>     printf("\n\nIf performing encryption (mode = e), the plaintext is read from stdin and the ciphertext is ");
+> 	printf("\nwritten to stdout. If performing decryption (mode = d), the ciphertext is read from stdin and ");
+> 	printf("\nthe plaintext is written to stdout. Modes are: "); 
+>  	printf("\n\n\te Encrypt the plaintext to produce the ciphertext using the specified key."); 
+>  	printf("\n\td Decrypt the ciphertext to produce the plaintext using the specified key."); 
+>  	printf("\n\nOptions: ");
+>  	printf("\n\t-h Displays this help message and terminates without further processing. ");
+>  	printf("\n\t-k Reads the key from 'keyfile'. ");
+>  	printf("\n\t-v Displays version info and terminates without further processing. ");
+105,108c107
+< void ViewPrintStr
+<     (
+<     char *pString
+<     )
+---
+> void ViewPrintStr(char *pString)
+118,120c117
+< void ViewVersion
+<     (
+<     )
+---
+> void ViewVersion()

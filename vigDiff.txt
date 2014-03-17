@@ -1,0 +1,110 @@
+21a22,23
+>  *
+>  * March 16, 2014- Ashley Krueger, alkruege@asu.edu
+31,36c33,36
+< /* Define a bool constant named VIGENERE_ENCRYPT and initialize it to false. 
+< 	taken from Vignere.h file		not sure if quite correct*/ 
+< #define VIGENERE_ENCRYPT false
+< 
+< /* Declare a bool constant named VIGENERE_DECRYPT and initialize it to true. */
+< #define VIGENERE_DECRYPT true
+---
+> /* Define a bool constant named VIGENERE_ENCRYPT and initialize it to false. */
+> bool VIGENERE_ENCRYPT=false;
+> /* Define a bool constant named VIGENERE_DECRYPT and initialize it to true. */
+> bool VIGENERE_DECRYPT=true;
+41,53c41,43
+< char DecryptChar
+<     (
+<     char *pCiphertext,
+<     char  pKeyChar,
+<     int   pIndex
+<     );
+< 
+< char EncryptChar
+<     (
+<     char *pPlaintext,
+<     char  pKeyChar,
+<     int   pIndex
+<     );
+---
+> char DecryptChar(char *pCiphertext,char  pKeyChar,int   pIndex);
+> 
+> char EncryptChar(char *pPlaintext,char  pKeyChar,int   pIndex);
+77,82c67
+< char DecryptChar
+< (
+<  char *pCiphertext,
+<  char  pKeyChar,
+<  int   pIndex
+<  )
+---
+> char DecryptChar(char *pCiphertext,char  pKeyChar,int   pIndex)
+84,86c69,71
+< 	int row = pKeyChar - 'A';
+<     	int col = pCiphertext[pIndex] - 'A';
+< 	return 'A' + (col - row + 26) % 26;
+---
+> 	int row=pKeyChar-'A';
+> 	int col=pCiphertext[pIndex]-'A';
+> 	return ('A'+(col-row+26)%26);
+107,116c92,96
+< char EncryptChar
+< (
+<  char *pPlaintext,
+<  char  pKeyChar,
+<  int   pIndex
+<  ) {
+<     
+<     int row = pKeyChar - 'A';
+<     int col = pPlaintext[pIndex] - 'A';
+<     return 'A' + (row + col) %26;
+---
+> char EncryptChar(char *pPlaintext,char  pKeyChar,int   pIndex)
+> {
+> 	int row=pKeyChar-'A';
+> 	int col=pPlaintext[pIndex]-'A';
+> 	return ('A'+(row+col)%26);
+143,149c123
+< void Vigenere
+<     (
+<     bool  pMode,
+<     char *pKey,
+<     char *pIn,
+<     char *pOut
+<     )
+---
+> void Vigenere(bool  pMode,char *pKey,char *pIn,char *pOut)
+151c125
+<     int k = 0;
+---
+>     int k=0;
+153,158c127,138
+<     pOut[0] = '\0';
+<     for(i = 0; i < strlen(pIn) - 1; i++) {
+< 	if(pMode == VIGENERE_ENCRYPT) {
+< 	    pOut[i] = EncryptChar(pIn, pKey[k], i);
+< 	} else {
+< 	    pOut[i] = DecryptChar(pIn, pKey[k], i);
+---
+>     *pOut='\0';
+>     for(i=0;i<=strlen(pIn)-1;i++)
+>     {
+>     	if(pMode==VIGENERE_ENCRYPT)
+> 		{
+> 			pOut[i]=EncryptChar(pIn, pKey[k], i);
+> 		}
+> 		else
+> 		{
+> 			pOut[i]=DecryptChar(pIn, pKey[k], i);
+> 		}
+> 		k=(k+1)%strlen(pKey);
+160,163c140
+< 	
+< 	k = (k + 1) % strlen(pKey);
+<     }
+<     pOut[i] = '\0'; 
+---
+> 	pOut[i]='\0';
+164a142
+> 
