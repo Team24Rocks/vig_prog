@@ -78,7 +78,9 @@ void ViewGetStr
 	char *pStr
 	)
 {
-    scanf("%s", pStr);		// supposed to return anything?
+    
+    printf("Inside viewGetSTr");
+    scanf("%s", *pStr);		// supposed to return anything?
 }
 
 /*--------------------------------------------------------------------------------------------------------------

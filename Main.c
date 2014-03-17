@@ -72,18 +72,25 @@
  *------------------------------------------------------------------------------------------------------------*/
 int main(int   pArgc, char *pArgv[]) {
     /* Call ControllerBegin() */
+    printf("Hello");
+    
     ControllerBegin(pArgc, pArgv);
-
+    printf("Done with ControllerBegin");
+    
+    
     /* Call ControllerRun() */
+   
+    
     ControllerRun();
-
+    printf("ControllerRun\n");
+    
     /* Call ControllerEnd() */
     ControllerEnd();
-
+printf("ControllerEnd\n");
+    
     /* What should main return? */
     if(pArgc!=0){
-        char *pFmt=("An error code %d occurred in %s", err_code, some_string_var);
-        MainTerminate(pArgc,pFmt);
+        MainTerminate(-1, "Error when closing.\n");
         return 1;
     }
     else

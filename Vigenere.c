@@ -150,7 +150,7 @@ void Vigenere
 {
     int k = 0;
     int i;
-    *pOut = '\0';
+    pOut[0] = '\0';
     for(i = 0; i < strlen(pIn) - 1; i++) {
 	if(pMode == VIGENERE_ENCRYPT) {
 	    pOut[i] = EncryptChar(pIn, pKey[k], i);
