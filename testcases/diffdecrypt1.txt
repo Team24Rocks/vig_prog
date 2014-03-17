@@ -1,3 +1,5 @@
-1d0
+1c1
 < ATTACKATDAWN
 \ No newline at end of file
+---
+> Hellovigenere: invalid command line option: ./vigenere

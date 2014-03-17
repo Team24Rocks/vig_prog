@@ -1,3 +1,5 @@
-0a1
+1c1
+< Hellovigenere: invalid command line option: ./vigenere
+---
 > OPGJIZASJRLLVSRWFDVBWNRZZOZTCSMSPWOALUN
 \ No newline at end of file

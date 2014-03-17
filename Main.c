@@ -72,7 +72,6 @@
  *------------------------------------------------------------------------------------------------------------*/
 int main(int   pArgc, char *pArgv[]) {
     /* Call ControllerBegin() */
-    //printf("Hello");
     
     ControllerBegin(pArgc, pArgv);
     //printf("Done with ControllerBegin");
