@@ -72,21 +72,21 @@
  *------------------------------------------------------------------------------------------------------------*/
 int main(int   pArgc, char *pArgv[]) {
     /* Call ControllerBegin() */
-    printf("Hello");
+    //printf("Hello");
     
     ControllerBegin(pArgc, pArgv);
-    printf("Done with ControllerBegin");
+    //printf("Done with ControllerBegin");
     
     
     /* Call ControllerRun() */
    
     
     ControllerRun();
-    printf("ControllerRun\n");
+    //printf("ControllerRun\n");
     
     /* Call ControllerEnd() */
     ControllerEnd();
-printf("ControllerEnd\n");
+//printf("ControllerEnd\n");
     
     /* What should main return? */
 
@@ -107,14 +107,14 @@ printf("ControllerEnd\n");
  * NOTE:     This is a variadic function because the ... following the required pFmt parameter states that
  *           there may be 0, 1, 2, ... optional parameters. Variadic arguments are handled by preprocessor
  *           macros defined in stdarg.h, in particular: va_list, va_start, va_arg, and va_end.
- * NOTE:     This function works similarly to printf(). A typical call would be something like,
+ * NOTE:     This function works similarly to //printf(). A typical call would be something like,
  *
  *           MainTerminate(-1, "An error code %d occurred in %s", err_code, some_string_var);
  *
  *           pTermCode would be initialized to -1 when the function is called. pFmt would be initialized to
  *           "An error code %d occurred in %s", and there would be two variadic arguments: err_code which
  *           had better be an int variable, and some_string_var which had better be of the data type char *.
- *           If you located the source code for the printf() function in the C Standard Library, you will see
+ *           If you located the source code for the //printf() function in the C Standard Library, you will see
  *           that it looks very similar to this, only without the pTermCode parameters, and it will handle
  *           more format specifiers than just %c, %d, and %s.
  *------------------------------------------------------------------------------------------------------------*/
