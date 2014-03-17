@@ -275,11 +275,11 @@ void ControllerRun
     (
     )
 {
-    char *key[MAX_MSG_LEN + 1];
-    char *msgOut[MAX_MSG_LEN + 1];
-    *key = ModelGetKeyFilename();
-    FileReadStr(*key, *msgOut);
-    ModelSetKey(*msgOut);
-    ControllerEncryptDecrypt(ModelGetMode(),*msgOut);
-    ViewPrintStr(*msgOut);
+    char key[MAX_MSG_LEN+1];
+    char msgOut[MAX_MSG_LEN+1];
+    strcpy(key,ModelGetKeyFilename());
+    FileReadStr(key,key);
+    ModelSetKey(key);
+    ControllerEncryptDecrypt(ModelGetMode(),msgOut);
+    ViewPrintStr(msgOut);
 }
