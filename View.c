@@ -78,7 +78,7 @@ void ViewGetStr
 	char *pStr
 	)
 {
-	scanf("%s", pStr);
+    scanf("%s", pStr);		// supposed to return anything?
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -94,7 +94,7 @@ void ViewHelp() {
      * Write printf() statements to print the help information. See the project document in Section 4 where I
      * describe the -h option for what you should display here.
      */
-    printf("/nEncrypts or decrypts a message using the Vigenere cipher./nUsage: vigenere mode [-h]-k keyfile [-v]");
+    printf("\nEncrypts or decrypts a message using the Vigenere cipher.\nUsage: vigenere mode [-h]-k keyfile [-v]\n");
 }
 
 /*--------------------------------------------------------------------------------------------------------------
