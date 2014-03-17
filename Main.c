@@ -78,7 +78,7 @@ int main(int   pArgc, char *pArgv[]) {
     ControllerRun();
 
     /* Call ControllerEnd() */
-    ControllerRun();
+    ControllerEnd();
 
     /* What should main return? */
     
