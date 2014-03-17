@@ -89,6 +89,7 @@ int main(int   pArgc, char *pArgv[]) {
 printf("ControllerEnd\n");
     
     /* What should main return? */
+
     if(pArgc!=0){
         MainTerminate(-1, "Error when closing.\n");
         return 1;
