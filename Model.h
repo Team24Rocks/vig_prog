@@ -19,11 +19,9 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
- *
- * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
-#ifndef MODEL_H  /* Preprocessor guard to prevent Model.h from being included more than once */
-#define MODEL_H  /* See comments in Main.h. */
+#ifndef MODEL_H_  /* Preprocessor guard to prevent Model.h from being included more than once */
+#define MODEL_H_  /* See comments in Main.h. */
 
 #include "Types.h" /* For bool */
 
@@ -32,20 +30,39 @@
  *
  * See comments in Main.h concerning what global function declarations are for.
  *============================================================================================================*/
-extern void ModelBegin();
+extern void ModelBegin
+    (
+    );
 
-extern void ModelEnd();
+extern void ModelEnd
+    (
+    );
 
-extern char *ModelGetKey();
+extern char *ModelGetKey
+    (
+    );
 
-extern char *ModelGetKeyFilename();
+extern char *ModelGetKeyFilename
+    (
+    );
 
-extern bool ModelGetMode();
+extern bool ModelGetMode
+    (
+    );
 
-extern void ModelSetKey(char *pKey);
+extern void ModelSetKey
+    (
+    char *pKey
+    );
 
-extern void ModelSetKeyFilename(char *pKeyfilename);
+extern void ModelSetKeyFilename
+    (
+    char *pKeyfilename
+    );
 
-extern void ModelSetMode(bool pMode);
+extern void ModelSetMode
+    (
+    bool pMode
+    );
 
 #endif /* __MODEL_H__ */

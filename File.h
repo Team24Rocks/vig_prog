@@ -19,11 +19,9 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
- *
- * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
-#ifndef FILE_H  /* Preprocessor guard to File.h from being included more than once */
-#define FILE_H  /* See comments in Main.h. */
+#ifndef FILE_H_  /* Preprocessor guard to File.h from being included more than once */
+#define FILE_H_  /* See comments in Main.h. */
 
 /*==============================================================================================================
  * Global function declarations.
@@ -32,7 +30,7 @@
  *============================================================================================================*/
 
 /* Look at the function definitions in File.c to see what declarations you should write here. */
-void FileReadStr(char *pFilename,char *pString);
-void FileWriteStr(char *pFilename,char *pString);
+extern void FileReadStr(char *pFilename, char *pString);
+extern void FileWriteStr(char *pFilename, char *pString);
 
 #endif /* __FILE_H__ */

@@ -19,12 +19,12 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
- *
- * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
 #include <stdio.h>    /* For printf(), scanf() */
 #include "Globals.h"  /* For BINARY */
 #include "View.h"     /* Good to always include the module header file. See comments in Globals.c. */
+
+void ViewVersion();
 
 /*==============================================================================================================
  * Function definitions.
@@ -36,7 +36,9 @@
  *           functionality.
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
-void ViewBegin()
+void ViewBegin
+	(
+	)
 {
 }
 
@@ -46,7 +48,9 @@ void ViewBegin()
  *           functionality.
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
-void ViewEnd()
+void ViewEnd
+	(
+	)
 {
 }
 
@@ -56,7 +60,9 @@ void ViewEnd()
  * RETURNS:  The character that was read.
  * NOTE:     Not currently used, but is placed her for future use.
  *------------------------------------------------------------------------------------------------------------*/
-char ViewGetChar()
+char ViewGetChar
+	(
+	)
 {
 	return fgetc(stdin);
 }
@@ -67,7 +73,10 @@ char ViewGetChar()
  * RETURNS:  Nothing directly. The string is returned through the pStr parameter which has better be an array
  *           of chars large enough to store the string that was entered.
  *------------------------------------------------------------------------------------------------------------*/
-void ViewGetStr(char *pStr)
+void ViewGetStr
+	(
+	char *pStr
+	)
 {
 	scanf("%s", pStr);
 }
@@ -85,18 +94,7 @@ void ViewHelp() {
      * Write printf() statements to print the help information. See the project document in Section 4 where I
      * describe the -h option for what you should display here.
      */
-    printf("Vigenere Cipher Version 1.0"); 
-    printf("\n\nEncrypts or decrypts a message using the Vigenere cipher. ");
-    printf("\n\nUsage: vigenere mode [-h] -k keyfile [-v] ");
-    printf("\n\nIf performing encryption (mode = e), the plaintext is read from stdin and the ciphertext is ");
-	printf("\nwritten to stdout. If performing decryption (mode = d), the ciphertext is read from stdin and ");
-	printf("\nthe plaintext is written to stdout. Modes are: "); 
- 	printf("\n\n\te Encrypt the plaintext to produce the ciphertext using the specified key."); 
- 	printf("\n\td Decrypt the ciphertext to produce the plaintext using the specified key."); 
- 	printf("\n\nOptions: ");
- 	printf("\n\t-h Displays this help message and terminates without further processing. ");
- 	printf("\n\t-k Reads the key from 'keyfile'. ");
- 	printf("\n\t-v Displays version info and terminates without further processing. ");
+    printf("/nEncrypts or decrypts a message using the Vigenere cipher./nUsage: vigenere mode [-h]-k keyfile [-v]");
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -104,7 +102,10 @@ void ViewHelp() {
  * DESCR:    Prints a string to stdout.
  * RETURNS:  Nothing
  *------------------------------------------------------------------------------------------------------------*/
-void ViewPrintStr(char *pString)
+void ViewPrintStr
+    (
+    char *pString
+    )
 {
     printf("%s", pString);
 }
@@ -114,7 +115,9 @@ void ViewPrintStr(char *pString)
  * DESCR:    Prints the version of the Vigenere cipher program.
  * RETURNS:  Nothing
  *------------------------------------------------------------------------------------------------------------*/
-void ViewVersion()
+void ViewVersion
+    (
+    )
 {
     printf("Vigenere Cipher Version %s -- (c) %s %s\n", VERSION, COPY, AUTHOR);
 }

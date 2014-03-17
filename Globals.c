@@ -19,8 +19,6 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
- *
- * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
 
 /*
@@ -227,7 +225,7 @@
 const char *AUTHOR          = "Kevin R. Burger";
 const char *BINARY          = "vigenere";
 const char *COPY            = "2012";
-const char *VERSION         = "1.1";
+const char *VERSION         = "1.0";
 
 const int MAX_MSG_LEN       = 4096;
 const int TERM_ERR_ALPHA    =   -1;

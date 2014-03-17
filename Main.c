@@ -43,8 +43,6 @@
  * MODIFICATION HISTORY
  *     24 Jan 2012 [KRB] Version 1.0.
  *
- * March 16, 2014- Ashley Krueger, alkruege@asu.edu
- *
  * VIGENERE                                        24 Jan 2012                                         VIGENERE
 ***************************************************************************************************************/
 #include <stdarg.h>      /* For va_list, va_start, va_arg, and va_end */
@@ -72,10 +70,9 @@
  * RETURNS:  Zero on success. On failure, MainTerminate() is called with a nonzero return code to terminate the
  *           program.
  *------------------------------------------------------------------------------------------------------------*/
-int main(int   pArgc,char *pArgv[])
-{
+int main(int   pArgc, char *pArgv[]) {
     /* Call ControllerBegin() */
-    ControllerBegin(pArgc,pArgv);
+    ControllerBegin(pArgc, pArgv);
 
     /* Call ControllerRun() */
     ControllerRun();
@@ -84,6 +81,7 @@ int main(int   pArgc,char *pArgv[])
     ControllerEnd();
 
     /* What should main return? */
+    
     if(pArgc!=0){
         char *pFmt=("An error code %d occurred in %s", err_code, some_string_var);
         MainTerminate(pArgc,pFmt);
@@ -91,7 +89,6 @@ int main(int   pArgc,char *pArgv[])
     }
     else
         return 0;
-    
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -114,7 +111,12 @@ int main(int   pArgc,char *pArgv[])
  *           that it looks very similar to this, only without the pTermCode parameters, and it will handle
  *           more format specifiers than just %c, %d, and %s.
  *------------------------------------------------------------------------------------------------------------*/
-void MainTerminate(int   pTermCode,char *pFmt,...)
+void MainTerminate
+	(
+	int   pTermCode,
+    char *pFmt,
+	...
+	)
 {
     if (pTermCode != 0) {
         char *fp, msg[4096];

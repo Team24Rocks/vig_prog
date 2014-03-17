@@ -19,11 +19,9 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
- *
- * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
-#ifndef VIGENERE_H  /* Preprocessor guard to prevent Vigenere.h from being included more than once */
-#define VIGENERE_H  /* See comments in Main.h. */
+#ifndef VIGENERE_H_  /* Preprocessor guard to prevent Vigenere.h from being included more than once */
+#define VIGENERE_H_  /* See comments in Main.h. */
 
 /*
  * See comments in String.h concerning one header file including another header file. I am including Types.h
@@ -37,16 +35,22 @@
  *============================================================================================================*/
 
 /* Declare a bool constant named VIGENERE_ENCRYPT. */
-bool VIGENERE_ENCRYPT;
+#define VIGENERE_ENCRYPT false
 
 /* Declare a bool constant named VIGENERE_DECRYPT. */
-bool VIGENERE_DECRYPT;
+#define VIGENERE_DECRYPT true
 
 /*==============================================================================================================
  * Global function declarations.
  *
  * See comments in Main.h concerning what global function declarations are for.
  *============================================================================================================*/
-extern void Vigenere(bool  pMode,char *pKey,char *pIn,char *pOut);
+extern void Vigenere
+    (
+    bool  pMode,
+    char *pKey,
+    char *pIn,
+    char *pOut
+    );
 
 #endif /* __VIGENERE_H__ */

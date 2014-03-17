@@ -21,11 +21,9 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
- *
- * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
-#ifndef CONTROLLER_H  /* Preprocessor guard to prevent Controller.h from being included more than once */
-#define CONTROLLER_H  /* See comments in Main.h. */
+#ifndef CONTROLLER_H_  /* Preprocessor guard to prevent Controller.h from being included more than once */
+#define CONTROLLER_H_    /* See comments in Main.h. */
 
 /*==============================================================================================================
  * Global function declarations.
@@ -38,8 +36,13 @@ extern void ControllerBegin
     char *pArgv[]             /* Obviously, pArgv is an array of char pointers, i.e., an array of C-strings.  */
     );
 
-extern void ControllerEnd();
+extern void ControllerEnd
+    (
+    );
 
-extern void ControllerRun();
+extern void ControllerRun
+    (
+    );
+
 
 #endif /* __CONTROLLER_H__ */

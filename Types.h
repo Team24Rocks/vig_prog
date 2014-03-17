@@ -19,11 +19,9 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
- *
- * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
-#ifndef TYPES_H  /* Preprocessor guard to prevent Types.h from being included more than once */
-#define TYPES_H  /* See comments in Main.h. */
+#ifndef TYPES_H_  /* Preprocessor guard to prevent Types.h from being included more than once */
+#define TYPES_H_  /* See comments in Main.h. */
 
 /*==============================================================================================================
  * Global type definitions.

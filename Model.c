@@ -19,8 +19,6 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
- *
- * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
 #include "Model.h"  /* Good to always include the module header file. See comments in Globals.c. */
 
@@ -56,7 +54,9 @@ struct {
  *           mode to -1.
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
-void ModelBegin()
+void ModelBegin
+(
+)
 {
     ModelSetKeyFilename("");
     ModelSetMode(-1);
@@ -67,7 +67,9 @@ void ModelBegin()
  * DESCR:    Called to deallocate the Model data base.
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
-void ModelEnd()
+void ModelEnd
+(
+)
 {
 }
 
@@ -76,9 +78,11 @@ void ModelEnd()
  * DESCR:    Returns the key string. Note: this is an accessor function for the mKey global variable.
  * RETURNS:  A C-string which is the key.
  *------------------------------------------------------------------------------------------------------------*/
-char *ModelGetKey()
+char *ModelGetKey
+(
+)
 {
-   return gModelDbase.mKey; 
+    return gModelDbase.mKey;
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -86,7 +90,9 @@ char *ModelGetKey()
  * DESCR:    Returns the key file name string. Note: this is an accessor function for the mKeyFilename global.
  * RETURNS:  A C-string which is the file name of the key file.
  *------------------------------------------------------------------------------------------------------------*/
-char *ModelGetKeyFilename()
+char *ModelGetKeyFilename
+(
+)
 {
     return gModelDbase.mKeyFilename;
 }
@@ -96,7 +102,9 @@ char *ModelGetKeyFilename()
  * DESCR:    Returns the mode. Note: this is an accessor function for the mMode global variable.
  * RETURNS:  A bool which is either VIGENERE_ENCRYPT or VIGENERE_DECRYPT.
  *------------------------------------------------------------------------------------------------------------*/
-bool ModelGetMode()
+bool ModelGetMode
+(
+)
 {
     return gModelDbase.mMode;
 }
@@ -106,9 +114,12 @@ bool ModelGetMode()
  * DESCR:    Sets the key string. Note: this is a mutator function for mKey.
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
-void ModelSetKey(char *pKey)
+void ModelSetKey
+(
+ char *pKey
+ )
 {
-    gModelDbase.mKey=pKey;
+    gModelDbase.mKey = pKey;
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -116,9 +127,12 @@ void ModelSetKey(char *pKey)
  * DESCR:    Sets the key file name string. Note: this is a mutator function for mKeyFilename.
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
-void ModelSetKeyFilename(char *pKeyFilename)
+void ModelSetKeyFilename
+(
+ char *pKeyFilename
+ )
 {
-    gModelDbase.mKeyFilename=pKeyFilename;
+    gModelDbase.mKeyFilename = pKeyFilename;
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -126,7 +140,10 @@ void ModelSetKeyFilename(char *pKeyFilename)
  * DESCR:    Sets the mode integer. Note: this is a mutator function for mMode.
  * RETURNS:  Nothing.
  *------------------------------------------------------------------------------------------------------------*/
-void ModelSetMode(bool pMode)
+void ModelSetMode
+(
+ bool pMode
+ )
 {
-    gModelDbase.mMode=pMode;
+    gModelDbase.mMode = pMode;
 }

@@ -19,11 +19,9 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
- *
- * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
-#ifndef STRING_H  /* Preprocessor guard to prevent String.h from being included more than once */
-#define STRING_H  /* See comments in Main.h. */
+#ifndef STRING_H_  /* Preprocessor guard to prevent String.h from being included more than once */
+#define STRING_H_  /* See comments in Main.h. */
 
 /*
  * A header file can always #include other header files, in particular, when that other header file contains
@@ -97,8 +95,16 @@
  *
  * See comments in Main.h concerning what global function declarations are for.
  *============================================================================================================*/
-char *StrCatChar(char *pString,char  pChar);
+char *StrCatChar
+    (
+    char *pString,
+    char  pChar
+    );
 
-char *StrCatInt(char *pString,int   pInt);
+char *StrCatInt
+    (
+    char *pString,
+    int   pInt
+    );
 
 #endif /* __STRING_H__ */

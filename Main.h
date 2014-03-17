@@ -19,8 +19,6 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
- *
- * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
 
 /*
@@ -257,6 +255,11 @@
  *    A LOT), and you're missing some, then presumably your function should really have 6, 7, 100, or 10000
  *    parameters. And that's A LOT more than A LOT. It's like A LOT SQUARED. See, I told you it was funny.
  *============================================================================================================*/
-extern void MainTerminate(int   pTermCode,char *pFmt,...);
+extern void MainTerminate
+	(
+	int   pTermCode,
+	char *pFmt,
+	...
+	);
 
 #endif /* __MAIN_H__ */

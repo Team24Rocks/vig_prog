@@ -19,11 +19,9 @@
  * MODIFICATION HISTORY:
  * -------------------------------------------------------------------------------------------------------------
  * 24 Jan 2012 [KRB] Initial revision.
- *
- * March 16, 2014- Ashley Krueger, alkruege@asu.edu
  **************************************************************************************************************/
-#ifndef GLOBALS_H  /* Preprocessor guard to prevent Globals.h from being included more than once */
-#define GLOBALS_H  /* See comments in Main.h. */
+#ifndef GLOBALS_H_  /* Preprocessor guard to prevent Globals.h from being included more than once */
+#define GLOBALS_H_  /* See comments in Main.h. */
 
 /*==============================================================================================================
  * Global constant declarations.
