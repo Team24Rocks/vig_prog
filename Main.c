@@ -85,7 +85,7 @@ int main(int   pArgc,char *pArgv[])
 
     /* What should main return? */
     if(pArgc!=0){
-        char *pFmt=("An error code %d occurred in %s, err_code, some_string_var");
+        char *pFmt=("An error code %d occurred in %s", err_code, some_string_var);
         MainTerminate(pArgc,pFmt);
         return 1;
     }
