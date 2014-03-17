@@ -225,7 +225,7 @@ static void ControllerParseCmdLine
     bool bKeyfile = false, bMode = false;
     int i;
 
-    for (i = 1; i < pArgc; i++) {
+    for (i = 0; i < pArgc-1; i++) {
         if (streq(pArgv[i], "e")) {
             /* Call ModelSetMode() to set the mode to VIGENERE_ENCRYPT */
             ModelSetMode(VIGENERE_ENCRYPT);
