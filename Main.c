@@ -82,11 +82,11 @@ int main(int   pArgc, char *pArgv[]) {
     
     /* What should main return? */
 
-    if(pArgc!=0){
-        MainTerminate(-1, "Error when closing.\n");
-        return 1;
-    }
-    else
+//    if(pArgc!=0){
+//        MainTerminate(-1, "Error when closing.\n");
+//        return 1;
+//    }
+//    else
         return 0;
 }
 

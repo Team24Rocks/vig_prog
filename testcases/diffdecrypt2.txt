@@ -1,3 +1,6 @@
-1d0
+1c1
 < THEQUICKREDFOXJUMPEDOVERTHELAZYBROWNDOG
+\ No newline at end of file
+---
+> THEQUICKREDFOXJUMPEDOVERTHELAZYBROWNDO
 \ No newline at end of file

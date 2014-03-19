@@ -171,15 +171,14 @@ static void ControllerEncryptDecrypt
 {
     /* Define a character array named msgIn which has room for MAX_MSG_LEN+1 characters. */
  
-    char *msgIn[MAX_MSG_LEN + 1];
+    char msgIn[MAX_MSG_LEN + 1];
 
     /* Call ViewGetStr() to get the message string to be encrypted or decrypted. */
   
-    ViewGetStr(*msgIn);
+    ViewGetStr(msgIn);
     /* Call Vigenere() to encrypt or decrypt the message. */
     
-    
-    Vigenere(pMode, ModelGetKey(), *msgIn, pMsgOut);
+    Vigenere(pMode, ModelGetKey(), msgIn, pMsgOut);
 }
 
 /*--------------------------------------------------------------------------------------------------------------
@@ -222,7 +221,7 @@ static void ControllerParseCmdLine
     bool bKeyfile = false, bMode = false;
     int i;
 
-    for (i = 1; i < pArgc-1; i++) {
+    for (i = 1; i < pArgc; i++) {
         if (streq(pArgv[i], "e")) {
             /* Call ModelSetMode() to set the mode to VIGENERE_ENCRYPT */
             ModelSetMode(VIGENERE_ENCRYPT);
@@ -282,18 +281,9 @@ void ControllerRun
 {
     char key[MAX_MSG_LEN+1];
     char msgOut[MAX_MSG_LEN+1];
-    
-    
     strcpy(key,ModelGetKeyFilename());
-   
-    
     FileReadStr(key,key);
-   
-    
     ModelSetKey(key);
-   
-    
-    ControllerEncryptDecrypt(ModelGetMode(), msgOut);
-    printf("Finished controllerEncryptDecrypt.");
+   ControllerEncryptDecrypt(ModelGetMode(), msgOut);
     ViewPrintStr(msgOut);
 }

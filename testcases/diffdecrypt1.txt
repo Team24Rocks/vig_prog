@@ -1,3 +1,6 @@
-1d0
+1c1
 < ATTACKATDAWN
+\ No newline at end of file
+---
+> ATTACKATDAW
 \ No newline at end of file
