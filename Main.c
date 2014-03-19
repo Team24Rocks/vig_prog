@@ -72,20 +72,13 @@
  *------------------------------------------------------------------------------------------------------------*/
 int main(int   pArgc, char *pArgv[]) {
     /* Call ControllerBegin() */
-    
     ControllerBegin(pArgc, pArgv);
-    //printf("Done with ControllerBegin");
-    
-    
+     
     /* Call ControllerRun() */
-   
-    
     ControllerRun();
-    //printf("ControllerRun\n");
     
     /* Call ControllerEnd() */
     ControllerEnd();
-//printf("ControllerEnd\n");
     
     /* What should main return? */
 
